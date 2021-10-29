@@ -35,7 +35,26 @@ public class Maquina {
 	}
 
 	public double hacerCompra(int cantidad, double dineroUsuario, Refresco refresco) {
+		/*
+		double vueltas;
+		System.out.println("Has escogido " + refresco.getNombre());
+		System.out.println("¿Cantidad de refrescos? " + cantUsu);
+		if(refresco.ComprobarActualizarCantidad(cantUsu)) {
+			System.out.println("Debes ingresar: " + (refresco.getPrecio()*cantUsu));
+			
+			System.out.println("Has ingresado: " + dineroUsu);
+			vueltas = dineroUsu - (refresco.getPrecio()*cantUsu);
+			
+			System.out.println("Sus vueltas: " + vueltas);
+			this.setDinero(this.getDinero()-vueltas);
+			
+			Venta venta = new Venta(1, cantUsu, (refresco.getPrecio()*cantUsu), vueltas, refresco);
+			//listaVentas.add(venta);
+		}else {
+			System.out.println("No hay cantidad suficiente de este producto");
+		}*/
 		return 3;
+		
 	}
 	
 	

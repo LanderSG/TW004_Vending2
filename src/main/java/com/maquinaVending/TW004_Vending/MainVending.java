@@ -62,9 +62,10 @@ public class MainVending {
 
 
 	private static void generarInformes(ArrayList<Venta> informeVentas) {
+		System.out.println("Has escogido: Generar Informes");
 		if(informeVentas.size()>0) {
 			for (int i = 0; i < informeVentas.size(); i++) {
-				System.out.println("Informe " + i + ": \t" + informeVentas.get(i));
+				System.out.println("\tInforme " + i + ": \t" + informeVentas.get(i));
 			}
 		}else {
 			System.out.println("Actualmente no hay informes");
@@ -80,7 +81,7 @@ public class MainVending {
 			System.out.println("Debes ingresar: " + (refresco.getPrecio()*cantUsu));
 			
 			System.out.println("Has ingresado: " + dineroUsu);
-			vueltas = dineroUsu - refresco.getPrecio();
+			vueltas = dineroUsu - (refresco.getPrecio()*cantUsu);
 			
 			System.out.println("Sus vueltas: " + vueltas);
 			expendedora.setDinero(expendedora.getDinero()-vueltas);
