@@ -2,22 +2,17 @@ package com.maquinaVending.TW004_Vending;
 
 import java.util.ArrayList;
 
-import javax.swing.text.StyledEditorKit.ForegroundAction;
-
 public class MainVending {
 
 	public static void main(String[] args) {
 		boolean salir=false;
-		int cantUsu=2;
-		double vueltas=0;
-		double dineroUsu=10;
 		
 		Cliente cliente = new Cliente("Juan", 2, 10);
 		
 		ArrayList<Venta> informeVentas= new ArrayList<Venta>();		
 		
 		ArrayList<Refresco> listaRefrescos= new ArrayList<Refresco>();
-		Refresco cocaCola = new Refresco(1, "Coca-Cola", 2.00, 8);
+		Refresco cocaCola = new Refresco(1, "Cola", 2.00, 8);
 		Refresco agua = new Refresco(2, "Agua", 1.80, 3);
 		Refresco te = new Refresco(3, "Te", 2.50, 5);
 		
@@ -30,25 +25,25 @@ public class MainVending {
 		int condicion = 1;
 		
 		while (!salir) {
-			textoPantallaInicio(cocaCola, agua, te);					
+			textoPantallaInicio(listaRefrescos);					
 			
 			switch (condicion) {
 			case 1:
-				hacerCompra(cantUsu, dineroUsu, cocaCola, informeVentas);	
+				hacerCompra(cliente.getCantUsu(), cliente.getDineroUsu(), cocaCola, informeVentas);	
 				condicion = 2;
 				break;
 			case 2:
-				hacerCompra(cantUsu, dineroUsu, agua, informeVentas);
+				hacerCompra(cliente.getCantUsu(), cliente.getDineroUsu(), agua, informeVentas);
 				condicion = 3;
 				break;
 			case 3:
-				hacerCompra(cantUsu, dineroUsu, te, informeVentas);
+				hacerCompra(cliente.getCantUsu(), cliente.getDineroUsu(), te, informeVentas);
 				condicion = 4;				
 				break;
 			case 4:
 				if(informeVentas.size()>0) {
 					for (int i = 0; i < informeVentas.size(); i++) {
-						System.out.println("Cambios " + informeVentas.get(i).getCambios());
+						System.out.println("Informe " + i + ": \t" + informeVentas.get(i));
 					}
 				}else {
 					System.out.println("Actualmente no hay informes");
@@ -60,7 +55,6 @@ public class MainVending {
 				System.out.println("Escoge una opcion valida.");
 			}
 			
-			System.out.println(salir);
 		}
 
 	}
@@ -84,12 +78,21 @@ public class MainVending {
 		}
 	}
 
-	private static void textoPantallaInicio(Refresco cocaCola, Refresco agua, Refresco te) {
+	private static void textoPantallaInicio( ArrayList<Refresco> listaRefrescos) {
 		System.out.println("-------------MAQUINA VENDING---------------\n");
-		System.out.println("Cod. \t Cant. \t Refresco \t Precio");
-		System.out.println("\n " + cocaCola.getId() + "\t " + cocaCola.getCantidad() + "\t   " + cocaCola.getNombre() + "\t" + cocaCola.getPrecio());
-		System.out.println("\n " + agua.getId() +"\t " + agua.getCantidad() + "\t   " + agua.getNombre() + "\t \t" + agua.getPrecio());
-		System.out.println("\n " + te.getId() +"\t " + te.getCantidad() + "\t   " + te.getNombre() + "\t \t" + te.getPrecio() + "\n 4 GENERAR LISTA INFORMES");
+		System.out.println("Cod."+"\t"+" Cant."+"\t"+"Refresco "+"\t"+"Precio");
+		/*
+		System.out.println("\n " + cocaCola.getId() + "\t " + cocaCola.getCantidad() + "\t   " + cocaCola.getNombre() + "\t " + cocaCola.getPrecio());
+		System.out.println("\n " + agua.getId() +"\t " + agua.getCantidad() + "\t   " + agua.getNombre() + "\t \t " + agua.getPrecio());
+		System.out.println("\n " + te.getId() +"\t " + te.getCantidad() + "\t   " + te.getNombre() + "\t \t " + te.getPrecio() + "\n 4 GENERAR LISTA INFORMES");
+		*/
+		for (int i = 0; i < listaRefrescos.size(); i++) {
+			System.out.println("\n " + listaRefrescos.get(i).getId() + "\t " 
+					+ listaRefrescos.get(i).getCantidad() + "\t " + listaRefrescos.get(i).getNombre() 
+					+ "\t \t" + listaRefrescos.get(i).getPrecio());
+
+		}
+		System.out.println("\n 4 \t" + " GENERAR INFORMES \n");
 	}
 
 

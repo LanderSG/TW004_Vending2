@@ -45,13 +45,18 @@ public class Refresco {
 	public boolean ComprobarActualizarCantidad(int cant) {
 		boolean confirmar=true;
 		
-		if(this.cantidad < cant || this.cantidad==0) {
+		if(this.cantidad < cant || cant==0) {
 			confirmar=false;
 		}else {
-			this.cantidad=cant;
+			this.cantidad-=cant;
 		}
 		
 		return confirmar;
+	}
+
+	@Override
+	public String toString() {
+		return "Refresco [nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad + "]";
 	}
 
 }

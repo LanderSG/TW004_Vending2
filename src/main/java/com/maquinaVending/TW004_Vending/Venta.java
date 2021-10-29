@@ -32,7 +32,7 @@ public class Venta {
 	}
 	@Override
 	public String toString() {
-		return "Venta [id=" + id + ", cant=" + cant + ", precio=" + precio + ", cambios=" + cambios + ", refresco="
+		return "Venta [cant=" + cant + ", precio=" + precio + ", cambios=" + cambios + ", refresco="
 				+ refresco + "]";
 	}
 	
