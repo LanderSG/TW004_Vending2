@@ -34,7 +34,7 @@ public class Maquina {
 		return listaRefrescos;
 	}
 
-	public double venderRefresco(double dineroUsuario) {
+	public double hacerCompra(int cantidad, double dineroUsuario, Refresco refresco) {
 		return 3;
 	}
 	
