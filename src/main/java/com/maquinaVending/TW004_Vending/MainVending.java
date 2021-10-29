@@ -9,7 +9,7 @@ public class MainVending {
 		int cantUsu=2;
 		double vueltas=0;
 		double dineroUsu=10;
-		
+		System.out.println("Heyyyyy");
 		ArrayList<Venta> informeVentas= new ArrayList<Venta>();
 		
 		ArrayList<Refresco> listaRefrescos= new ArrayList<Refresco>();
